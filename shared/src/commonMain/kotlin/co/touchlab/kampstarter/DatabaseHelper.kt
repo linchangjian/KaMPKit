@@ -32,7 +32,6 @@ class DatabaseHelper(private val sqlDriver: SqlDriver) {
     }
 
     suspend fun updateFavorite(breedId: Long, favorite: Boolean) = withContext(Dispatchers.Default) {
-        debugWrite("updateFavorite")
         dbRef.tableQueries.updateFavorite(favorite.toLong(), breedId)
     }
 }
